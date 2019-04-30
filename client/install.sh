@@ -1,10 +1,10 @@
 #SETTING UP THE SECURITY
 
 #generate the router key
-ndnsec-key-gen /ndn/edu/uaslp/%C1.Router/client > client.key
+ndnsec-key-gen /ndn/upec/%C1.Router/client > client.key
 
 #generate the certificate for the router key
-ndnsec-cert-dump -i /ndn/edu/uaslp/%C1.Router/client > client.cert
+ndnsec-cert-dump -i /ndn/upec/%C1.Router/client > client.cert
 
 #install the router certificate
 ndnsec-cert-install -f client.cert

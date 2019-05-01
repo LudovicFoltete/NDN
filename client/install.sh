@@ -14,6 +14,9 @@ ndnsec-list
 
 #CONFIGURING NFD
 
+#start nfd
+nfd-start &
+
 #configure each face that a computer uses to connect to a neighboring computer
 nfdc face create udp4://192.168.10.1
 nfdc face create udp4://192.168.10.2

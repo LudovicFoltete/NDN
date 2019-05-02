@@ -17,6 +17,10 @@ ndnsec-list
 #start nfd
 nohup nfd-start > /dev/null
 
+#wait a little to let time for nfd to start completely
+echo "NFD IS STARTING, PLEASE WAIT..."
+sleep 15
+
 #configure each face that a computer uses to connect to a neighboring computer
 nfdc face create udp4://192.168.10.254
 nfdc face create udp4://192.168.10.2

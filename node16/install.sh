@@ -41,6 +41,10 @@ nfdc face create udp4://192.168.10.254
 
 #SETTING UP THE CONFIGURATION FILE
 
+#give the rights to execute scripts
+chmod +x start_nlsr.sh
+chmod +x restart.sh
+
 #move all files in the NLSR directory
 mv ~/NLSR/nlsr.conf ~/NLSR/nlsr.conf.backup
 mv nlsr.conf ~/NLSR/

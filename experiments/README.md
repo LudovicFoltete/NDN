@@ -10,9 +10,9 @@ The NDN project investigates evolution from today’s host-centric network archi
 
 Cluster configuration
 
- - 17 Virtual Machine with 2Go RAM, 20Go storage and 1 CPU (2GHz)
+ - 17 Virtual Machine with 2Go RAM, 20Go storage and 1 CPU (2GHz).
  - 16 nodes of storage (receive replication) and 1 client (initiates replication).
- - One virtual switch connects all the VM
+ - One virtual switch connects all the VM.
 
 This experiments assumes :
 
@@ -26,10 +26,13 @@ This experiments assumes :
 This experiments are made on [NDFS](https://github.com/mistersound/ndfs-evaluation), that require [nodejs](https://nodejs.org/en/download/) (version >= 10.15.3 )
 
 ## Inputs
+
 |Input     | Experiment1 | Experiment2 | Experiment3 | Experiment4|
-|----------|------------|-------------|-------------|---------------------|
-|File size |    500Mo   |     500Mo   | 5Go         | 5Go     |
-|Replication factor| 3  | 15          | 3           | 15      |
+|----------|-------------|-------------|-------------|------------|
+|File size | 500Mo       | 500Mo       | 5Go         | 5Go        |
+|Replication factor| 3   | 15          | 3           | 15         |
+
+You can download files of different sizes at http://bouygues.testdebit.info
 
 ## Experiments
 
@@ -38,10 +41,10 @@ In this following instructions :
  - The client advertise \lacl
  - The storage's nodes advertise \upec\storage
 
-[ndn6-tools](https://github.com/yoursunny/ndn6-tools) is used instead of ndn-tools because [ndnputchunks](https://github.com/named-data/ndn-tools/tree/master/tools/chunks/putchunks) need too much memory.
+[ndn6-tools](https://github.com/yoursunny/ndn6-tools) is used instead of ndn-tools because [ndnputchunks](https://github.com/named-data/ndn-tools/tree/master/tools/chunks/putchunks) needs too much memory.
 Therefore we use [file-server](https://github.com/yoursunny/ndn6-tools/blob/master/file-server.md) command-line to serve file from nodes.
 
-On all storage node, execute
+On all storage node, execute : 
 		
 	node storages.js
 
@@ -53,9 +56,9 @@ On client, place files in a directory, and execute (for a replication factor of 
 
 ## Outputs
 
-| Output | Experiment1 | Experiment2 | Experiment3 | Experiment4|
-|--------|--------------|--------------|--------------|-------------------|
-| Throughput |  |
+|     Output    | Experiment1 | Experiment2 | Experiment3 | Experiment4|
+|---------------|-------------|-------------|-------------|------------|
+|  Throughput   |
 |Average IO rate|
-| Runtime |
-| Performance |
+|    Runtime    |
+|  Performance  |

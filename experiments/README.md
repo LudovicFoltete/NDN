@@ -10,8 +10,12 @@ The NDN project investigates evolution from today’s host-centric network archi
 
 Cluster configuration
 
- - 17 Virtual Machine with 2Go RAM, 20Go storage and 1 CPU (2GHz).
- - 16 nodes of storage (receive replication) and 1 client (initiates replication).
+ - 17 Virtual Machine that includes :
+	- 16 nodes of storage (receive replication) with 8Go RAM, 50Go storage and 2 CPU
+	- 1 client (initiates replication) with 16Go RAM, 50Go storage and 1 CPU
+ - CPU is Intel(R) Xeon(R) Silver 4114 with 2,20 GHz
+ - DIMM DRAM ED0 1400 MHz
+ - SATA AHCI controller (VMware) 66 MHz
  - One virtual switch connects all the VM.
 
 This experiments assumes :
@@ -27,10 +31,10 @@ This experiments are made on [NDFS](https://github.com/mistersound/ndfs-evaluati
 
 ## Inputs
 
-|Input     | Experiment1 | Experiment2 | Experiment3 | Experiment4|
-|----------|-------------|-------------|-------------|------------|
-|File size | 500Mo       | 500Mo       | 5Go         | 5Go        |
-|Replication factor| 3   | 15          | 3           | 15         |
+|Input             | Experiment1 | Experiment2 | Experiment3 | Experiment4|
+|------------------|-------------|-------------|-------------|------------|
+|File size         | 500Mo       | 500Mo       | 5Go         | 5Go        |
+|Replication factor| 3           | 15          | 3           | 15         |
 
 You can download files of different sizes at http://bouygues.testdebit.info
 
@@ -38,19 +42,20 @@ You can download files of different sizes at http://bouygues.testdebit.info
 
 In this following instructions :
 
- - The client advertise \lacl
- - The storage's nodes advertise \upec\storage
+ - The client advertise /lacl
+ - The storage's nodes advertise /upec/storage
+ - All VMs run the [nfd] (https://github.com/named-data/NLSR) and [nlsr](https://github.com/named-data/NLSR) daemons.
 
 [ndn6-tools](https://github.com/yoursunny/ndn6-tools) is used instead of ndn-tools because [ndnputchunks](https://github.com/named-data/ndn-tools/tree/master/tools/chunks/putchunks) needs too much memory.
 Therefore we use [file-server](https://github.com/yoursunny/ndn6-tools/blob/master/file-server.md) command-line to serve file from nodes.
 
-On all storage node, execute : 
+On all storage node, run : 
 		
 	node storages.js
 
-On client, place files in a directory, and execute (for a replication factor of 3) :
+On client, place files in a directory, and run (for a replication factor of 3) :
 
-	./file-server /prefix /lacl/data/0/1 /directory/
+	ndnputchunks /lacl/data/0/1 < /directory/file
 	node client.js /upec/storage/3/3/lacl/data/0/1
 
 

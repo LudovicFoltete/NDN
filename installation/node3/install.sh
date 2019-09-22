@@ -1,3 +1,6 @@
+#SETTING UP THE NETWORK
+sudo mv -f interfaces /etc/network
+
 #SETTING UP THE SECURITY
 
 #generate the router key
@@ -44,6 +47,9 @@ nfdc face create udp4://192.168.10.16
 #give the rights to execute scripts
 chmod +x start_nlsr.sh
 chmod +x restart.sh
+
+#move restart script to home
+mv restart.sh ~
 
 #move all files in the NLSR directory
 mv ~/NLSR/nlsr.conf ~/NLSR/nlsr.conf.backup

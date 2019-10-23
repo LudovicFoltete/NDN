@@ -44,7 +44,7 @@ In this following instructions :
 
  - The client advertise /lacl
  - The storage's nodes advertise /upec/storage
- - All VMs run the [nfd] (https://github.com/named-data/NLSR) and [nlsr](https://github.com/named-data/NLSR) daemons.
+ - All VMs run the [nfd](https://github.com/named-data/NLSR) and [nlsr](https://github.com/named-data/NLSR) daemons.
 
 [ndn6-tools](https://github.com/yoursunny/ndn6-tools) is used instead of ndn-tools because [ndnputchunks](https://github.com/named-data/ndn-tools/tree/master/tools/chunks/putchunks) needs too much memory.
 Therefore we use [file-server](https://github.com/yoursunny/ndn6-tools/blob/master/file-server.md) command-line to serve file from nodes.

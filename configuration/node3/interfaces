@@ -9,9 +9,7 @@ iface lo inet loopback
 
 # The primary network interface
 auto ens160
-iface ens160 inet dhcp
-
-#The secondary network interface
-auto ens192
-iface ens192 inet static
+iface ens160 inet static
 address 192.168.10.3
+gateway 192.168.10.254
+dns-nameservers 8.8.8.8

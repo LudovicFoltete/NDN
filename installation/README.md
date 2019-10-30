@@ -1,5 +1,5 @@
 # CLUSTER'S INSTALLATION
-This repository contains the command to install the HDFS and the NDN cluster.
+This repository contains the command to install the HDFS and the NDFS cluster.
 
 ## HDFS 
 
